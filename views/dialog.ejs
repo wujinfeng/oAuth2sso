@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>Hi <%= user.username %>!</p>
+<p><b><%= client.name %></b> is requesting <b>full access</b> to your account.</p>
+<p>Do you approve?</p>
+
+<form action="/api/oauth2/authorize" method="post">
+    <input name="transaction_id" type="hidden" value="<%= transactionID %>">
+    <div>
+        <input type="submit" value="Allow" id="allow">
+        <input type="submit" value="Deny" name="cancel" id="deny">
+    </div>
+</form>
+
+作者：uncle_charlie
+链接：https://www.jianshu.com/p/f31ad7f2e569
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+</body>
+</html>
